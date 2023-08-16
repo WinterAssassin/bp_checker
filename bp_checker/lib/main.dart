@@ -1,3 +1,4 @@
+import 'package:bp_checker/screen/bp_measurement.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +10,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        // useMaterial3: true,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red),
+      ),
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: const Center(child: Text('Blood Pressure Checker')),
         ),
+        body: const BPScreen(),
       ),
     );
   }
