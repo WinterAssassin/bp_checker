@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
-enum PressureCategory { low, normal, elevated, h1, h2, hCrisis }
+enum PressureCategory { none, low, normal, elevated, h1, h2, hCrisis }
 
-class BPCategory {
-  late PressureCategory reading;
+class BPCategory extends StatelessWidget {
+  final PressureCategory reading;
+  const BPCategory({super.key, required this.reading});
 
-  BPCategory({required this.reading});
-
-  Widget catColor() {
+  @override
+  Widget build(BuildContext context) {
     return switch (reading) {
+      PressureCategory.none => Container(
+          width: 200,
+          height: 50,
+          color: const Color.fromRGBO(204, 204, 204, 1),
+        ),
       PressureCategory.low => Container(
           width: 200,
           height: 50,
-          color: const Color.fromRGBO(166, 206, 57, 1),
+          color: const Color.fromRGBO(173, 216, 230, 1),
         ),
       PressureCategory.normal => Container(
           width: 200,
