@@ -42,7 +42,11 @@ class ReadingCategory extends StatelessWidget {
       width: 200,
       height: 50,
       color: catColor,
-      child: Center(child: Text(text)),
+      child: Center(
+          child: Text(
+        text,
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      )),
     );
   }
 }
