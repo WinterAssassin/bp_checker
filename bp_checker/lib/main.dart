@@ -19,7 +19,7 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Center(child: Text('Blood Pressure Checker')),
         ),
-        body: const BPScreen(),
+        body: const Center(child: BPScreen()),
       ),
     );
   }
